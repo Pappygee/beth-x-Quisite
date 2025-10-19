@@ -10,11 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($username === $stored_username && $password === $stored_password){
         $_SESSION['admin_logged_in'] = true;
-        header("Location: admin.php");
+        header("Location: index.php");
         exit();
     } else {
         header("Location: login.html?error=1");
         exit();
     }
 }
+
 ?>
