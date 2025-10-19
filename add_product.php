@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO products (name, price, description, image, collection_id) VALUES (?, ?, ?, ?, ?)");
     if ($stmt->execute([$name, $price, $description, $imagePath, $collection_id])) {
         respond('Product added successfully!', true);
-        echo '<a href="admin.php">Add another product</a>';
+        echo '<a href="index.php">Add another product</a>';
     } else {
         respond('Failed to add product.');
     }
@@ -53,3 +53,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     respond('Invalid request.');
 }
 ?>
+
